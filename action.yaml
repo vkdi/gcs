@@ -1,0 +1,26 @@
+name: 'gcs'
+description: 'gcs'
+author: 'gcs'
+
+inputs:
+  secrets:
+    description: sa
+    required: true
+  bucket:
+    description: bucket
+    required: true
+  sync_dir:
+    description: dir sync
+    required: false
+    default: ''
+  exclude:
+    description: exclude
+    required: false
+    default: '.*\.sh$|.*\.txt$|.*\.json$|\.git/.*$|\.github/.*$'
+
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: arrow-up
+  color: gray-dark
